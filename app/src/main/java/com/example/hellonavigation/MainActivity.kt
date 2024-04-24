@@ -9,10 +9,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.ExperimentalSafeArgsApi
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.example.hellonavigation.ui.theme.HelloNavigationTheme
 import kotlinx.serialization.Serializable
 
@@ -37,35 +37,35 @@ fun MyNavGraph() {
         startDestination = NavRoute.MyList
     ) {
         composable<NavRoute.MyList> {
-            ListScreen(navController = navController)
+            ListScreen(onClickItem = {
+                navController.navigate(NavRoute.MyDetail(it))
+            })
         }
         composable<NavRoute.MyDetail> {
-            DetailScreen()
+            DetailScreen(it.toRoute<NavRoute.MyDetail>().id)
         }
     }
 }
 
-@OptIn(ExperimentalSafeArgsApi::class)
 @Composable
-fun ListScreen(navController: NavHostController) {
+fun ListScreen(onClickItem: (Int) -> Unit){
     Column {
         Text("I am a list screen")
-        Button(onClick = { navController.navigate(route = NavRoute.MyDetail) }){
+        Button(onClick = { onClickItem(1) }){
             Text("Go to detail screen")
         }
     }
 
 }
 
-@Preview
 @Composable
-fun DetailScreen() {
-    Text("I am a detail screen")
+fun DetailScreen(id: Int) {
+    Text("I am a detail screen with ID $id")
 }
 
 sealed interface NavRoute {
     @Serializable
     data object MyList : NavRoute
     @Serializable
-    data object MyDetail : NavRoute
+    data class MyDetail(val id: Int) : NavRoute
 }
