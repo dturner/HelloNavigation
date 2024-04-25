@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HelloNavigationTheme {
-                MyNavGraph()
+                MyNavigation()
             }
         }
     }
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalSafeArgsApi::class)
 @Preview
 @Composable
-fun MyNavGraph() {
+fun MyNavigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
