@@ -9,7 +9,7 @@ kotlinxSerializationJson = "1.6.0"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
 composeBom = "2024.04.00"
-navigationCompose = "2.8.0-alpha07"
+navigationCompose = "2.8.0-alpha08"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
