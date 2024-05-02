@@ -27,9 +27,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Serializable
-data object ListRoute // #1 Defining routes and their arguments as types
+data object ListDestination // #1 Defining routes and their arguments as types
 @Serializable
-data class DetailRoute(val id: Int)
+data class DetailDestination(val id: Int)
 
 @Preview
 @Composable
@@ -37,15 +37,15 @@ fun MyNavHost() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = ListRoute
+        startDestination = ListDestination
     ) {
-        composable<ListRoute> {
-            ListScreen(onClickItem = {
-                navController.navigate(route = DetailRoute(it)) // #3 Navigating to a destination
+        composable<ListDestination> {
+            ListScreen(onClickItem = { detailId ->
+                navController.navigate(route = DetailDestination(detailId)) // #3 Navigating to a destination
             })
         }
-        composable<DetailRoute> { backStackEntry -> // #2 Defining a destination
-            DetailScreen(id = backStackEntry.toRoute<DetailRoute>().id) // #4 Obtaining the route arguments from the navStackBackEntry
+        composable<DetailDestination> { backStackEntry -> // #2 Defining a destination
+            DetailScreen(id = backStackEntry.toRoute<DetailDestination>().id) // #4 Obtaining the route arguments from the navStackBackEntry
         }
     }
 }
