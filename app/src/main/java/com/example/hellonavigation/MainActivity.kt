@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HelloNavigationTheme {
-                MyNavigation()
+                MyNavHost()
             }
         }
     }
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalSafeArgsApi::class)
 @Preview
 @Composable
-fun MyNavigation() {
+fun MyNavHost() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -55,7 +55,6 @@ fun ListScreen(onClickItem: (Int) -> Unit){
             Text("Go to detail screen")
         }
     }
-
 }
 
 @Composable
