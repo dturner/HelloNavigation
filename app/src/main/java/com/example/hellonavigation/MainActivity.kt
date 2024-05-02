@@ -34,15 +34,15 @@ fun MyNavigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = NavRoute.MyList
+        startDestination = MyList
     ) {
-        composable<NavRoute.MyList> {
+        composable<MyList> {
             ListScreen(onClickItem = {
-                navController.navigate(NavRoute.MyDetail(it))
+                navController.navigate(MyDetail(it))
             })
         }
-        composable<NavRoute.MyDetail> {
-            DetailScreen(it.toRoute<NavRoute.MyDetail>().id)
+        composable<MyDetail> {
+            DetailScreen(it.toRoute<MyDetail>().id)
         }
     }
 }
@@ -63,9 +63,7 @@ fun DetailScreen(id: Int) {
     Text("I am a detail screen with ID $id")
 }
 
-sealed interface NavRoute {
-    @Serializable
-    data object MyList : NavRoute
-    @Serializable
-    data class MyDetail(val id: Int) : NavRoute
-}
+@Serializable
+data object MyList
+@Serializable
+data class MyDetail(val id: Int)
