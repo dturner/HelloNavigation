@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">HelloNavigation</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_nested_nav">NestedNavActivity</string>
+    <string name="nia_activity">Now in Android Activity</string>
 </resources>

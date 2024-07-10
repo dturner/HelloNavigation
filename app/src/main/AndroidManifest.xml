@@ -13,6 +13,27 @@
         android:theme="@style/Theme.HelloNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".NestedNavActivity"
+            android:exported="true"
+            android:label="@string/title_activity_nested_nav"
+            android:theme="@style/Theme.HelloNavigation" />
+        <activity
+            android:name=".nia.NiaActivity"
+            android:exported="true"
+            android:label="@string/nia_activity"
+            android:theme="@style/Theme.HelloNavigation" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.HelloNavigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
