@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
@@ -94,7 +93,7 @@ private fun MyNavHost(navHostController: NavHostController) {
             startDestination = ForYouRoute
         ) {
             composable<ForYouRoute> {
-                HomeScreen(onClickItem = {
+                MyScreen(onClickItem = {
                     navHostController.navigate(route = InterestsRoute)
                 })
             }
@@ -106,7 +105,7 @@ private fun MyNavHost(navHostController: NavHostController) {
 }
 
 @Composable
-private fun HomeScreen(onClickItem: () -> Unit) {
+private fun MyScreen(onClickItem: () -> Unit) {
     Column {
         Text("Home screen")
         Button(onClick = onClickItem){

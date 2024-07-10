@@ -18,6 +18,11 @@
             android:label="@string/title_activity_nested_nav"
             android:theme="@style/Theme.HelloNavigation" />
         <activity
+            android:name=".popupto.MainActivity"
+            android:exported="true"
+            android:label="@string/popupto_activity"
+            android:theme="@style/Theme.HelloNavigation" />
+        <activity
             android:name=".nia.NiaActivity"
             android:exported="true"
             android:label="@string/nia_activity"
