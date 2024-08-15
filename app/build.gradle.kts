@@ -1,17 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("plugin.serialization") version "1.9.23"
+    alias(libs.plugins.compose.compiler)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
     namespace = "com.example.hellonavigation"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.hellonavigation"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -68,7 +69,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.serialization.core.jvm)
+    //implementation(libs.kotlinx.serialization.json)
+    //implementation(libs.kotlinx.serialization.core.jvm)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.7.1")
+
+    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
 
 }
