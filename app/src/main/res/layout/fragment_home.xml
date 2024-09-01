@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.HomeFragment">
+
+    <Button
+        android:id="@+id/button_to_plant_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to plant detail" />
+
+    <Button
+        android:id="@+id/button_to_another_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to another activity" />
+
+    <Button
+        android:id="@+id/button_to_fruit_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to fruit detail" />
+
+
+</LinearLayout>

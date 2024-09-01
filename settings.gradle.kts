@@ -8,6 +8,11 @@ pluginManagement {
             }
         }
         mavenCentral()
+        /*maven {
+            // You can find the maven URL for other artifacts (e.g. KMP, METALAVA) on their
+            // build pages.
+            url = uri("https://androidx.dev/snapshots/builds/12208038/artifacts/repository")
+        }*/
         gradlePluginPortal()
     }
 }
@@ -16,6 +21,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        /*maven {
+            url = uri("https://androidx.dev/snapshots/builds/12208038/artifacts/repository")
+        }*/
     }
 }
 

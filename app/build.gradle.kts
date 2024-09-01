@@ -49,6 +49,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -62,6 +65,13 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -69,10 +79,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    //implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.json)
     //implementation(libs.kotlinx.serialization.core.jvm)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.7.1")
+    //implementation(libs.kotlinx.serialization.protobuf)
 
-    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.material3.adaptive.navigation.suite)
+
+    androidTestImplementation(libs.androidx.navigation.testing)
+
 
 }

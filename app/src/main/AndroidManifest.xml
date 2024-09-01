@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,31 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloNavigation"
         tools:targetApi="31">
-        <!--<activity
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".views.AnotherActivity"
+            android:exported="false" />
+
+
+
+        <!--
+        <activity
             android:name=".NestedNavActivity"
             android:exported="true"
             android:label="@string/title_activity_nested_nav"
-            android:theme="@style/Theme.HelloNavigation" />-->
+            android:theme="@style/Theme.HelloNavigation" />
+        -->
         <activity
             android:name=".stringroutes.MainActivity"
             android:exported="true"
             android:label="String routes activity"
-            android:theme="@style/Theme.HelloNavigation">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-            <intent-filter android:label="deeplink intent">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https"
-                    android:host="www.stringroutes.hellonavigation.example.com"
-                     />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.HelloNavigation" />
         <activity
             android:name=".popupto.MainActivity"
             android:exported="true"
@@ -54,47 +48,60 @@
             android:name=".MainActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.HelloNavigation">
-        </activity>
+            android:theme="@style/Theme.HelloNavigation" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HelloNavigation">
-
-        </activity>
-
+            android:theme="@style/Theme.HelloNavigation" />
         <activity
             android:name=".shareddestination.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HelloNavigation">
-
-        </activity>
-
+            android:theme="@style/Theme.HelloNavigation" />
+        <activity
+            android:name=".stringroutes.StringRoutesActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HelloNavigation" />
+        <activity
+            android:name=".adaptive.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HelloNavigation" />
         <activity
             android:name=".blog.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.HelloNavigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="deeplink intent">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.hellonavigation.example.com"
+                    android:scheme="https" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".nestednavtypes.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HelloNavigation">
-
-        </activity>
-
+            android:theme="@style/Theme.HelloNavigation" />
         <activity
             android:name=".expandablenavdrawer.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HelloNavigation">
+            android:theme="@style/Theme.HelloNavigation" />
 
-        </activity>
+
     </application>
 
 </manifest>
